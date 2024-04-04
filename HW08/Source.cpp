@@ -2,13 +2,13 @@
 #include <string>
 using namespace std;
 
-class IÑomponent abstract
+class IComponent abstract
 {
 public:
 	virtual void PrintInfo() abstract;
 };
 
-class RAM: public IÑomponent
+class RAM: public IComponent
 {
 protected:
 	int capacity;
@@ -33,7 +33,7 @@ public:
 	}
 };
 
-class HDD : public IÑomponent
+class HDD : public IComponent
 {
 protected:
 	int capacity;
@@ -61,10 +61,10 @@ public:
 class PC abstract
 {
 protected:
-	IÑomponent* component;
+	IComponent* component;
 public:
-	IÑomponent* GetComponent() { return this->component; }
-	void SetComponent(IÑomponent* component) { this->component = component; }
+	IComponent* GetComponent() { return this->component; }
+	void SetComponent(IComponent* component) { this->component = component; }
 	virtual void PrintInfo()
 	{
 		component->PrintInfo();
@@ -74,7 +74,7 @@ public:
 class PCHome : public PC
 {};
 
-void client(IÑomponent* component, PC* pc)
+void client(IComponent* component, PC* pc)
 {
 	pc->SetComponent(component);
 	pc->PrintInfo();
@@ -82,7 +82,7 @@ void client(IÑomponent* component, PC* pc)
 
 int main()
 {
-	IÑomponent* component = new RAM(8192, 1699, "Kingston", "DDR4");
+	IComponent* component = new RAM(8192, 1699, "Kingston", "DDR4");
 	PC* pc = new PCHome();
 	client(component, pc);
 	delete component;
