@@ -1,0 +1,6 @@
+	GPU
+Producer: Asus
+Graphics chip: GeForce RTX 3060
+Memory capacity: 12 GB
+Memory frequency: 15000 MHz
+Core frequency: 1867 MHz

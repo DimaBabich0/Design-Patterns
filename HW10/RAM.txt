@@ -1,0 +1,4 @@
+	RAM
+Producer: Kingston
+Capacity: 16 GB
+Frequency: 3200 MHz
